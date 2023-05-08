@@ -18,9 +18,45 @@ print(df.shape)
 #Result is 150 rows and 5 columns (does not include the row numbers column)
 #(150, 5)
 
+#using .info we can print the data types to avoid null data etc
+print(df.info())
+#Results:
+#<class 'pandas.core.frame.DataFrame'>
+#RangeIndex: 150 entries, 0 to 149
+#Data columns (total 5 columns):
+#    Column        Non-Null Count  Dtype  
+#---  ------        --------------  -----  
+#0   sepal_length  150 non-null    float64
+#1   sepal_width   150 non-null    float64
+#2   petal_length  150 non-null    float64
+#3   petal_width   150 non-null    float64
+#4   species       150 non-null    object 
+#dtypes: float64(4), object(1)
+#memory usage: 6.0+ KB
+print("The information gathered from the dataset shows us that the is only 1 catagorical column and all others are numeric type with non-Null entries")
 
+print("\nNext we will use the descibe() method to get a good picture of the distribution of data\n")
+print(df.describe())
+#Results:
+#       sepal_length  sepal_width  petal_length  petal_width
+#count    150.000000   150.000000    150.000000   150.000000
+#mean       5.843333     3.054000      3.758667     1.198667
+#std        0.828066     0.433594      1.764420     0.763161
+#min        4.300000     2.000000      1.000000     0.100000
+#25%        5.100000     2.800000      1.600000     0.300000
+#50%        5.800000     3.000000      4.350000     1.300000
+#75%        6.400000     3.300000      5.100000     1.800000
+#max        7.900000     4.400000      6.900000     2.500000
 
-
+print("\nTo check for any missing values we use isnull() method with sum to get the total, for this dataset there are no missing value")
+print(df.isnull().sum())
+#Results:
+#sepal_length    0
+#sepal_width     0
+#petal_length    0
+#petal_width     0
+#species         0
+#dtype: int64
 
 
 #pair1 petal_length v petal_width
