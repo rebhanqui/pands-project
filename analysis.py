@@ -72,8 +72,7 @@ print(df.value_counts("species"))
 #pair1 petal_length v petal_width
 #pair2 sepal_length v sepal_width
 
-sns.scatterplot(x='SepalLengthCm', y='SepalWidthCm',
-                hue='Species', data=df, )
+sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df)
 
 # Placing Legend outside the Figure
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
