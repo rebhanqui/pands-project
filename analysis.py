@@ -76,7 +76,8 @@ sns.scatterplot(x="petal_length", y="petal_width", hue="species", data=df)
 #https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
 
 #sets the size of image in inches
-plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
+plt.show()
+#plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
 
 
 df2 = pd.read_csv("iris.csv")
@@ -91,7 +92,8 @@ sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df2)
 #https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
 
 #sets the size of image in inches
-plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
+plt.show()
+#plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
 
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 print("Species Setosa has smaller sepal lengths but larger sepal widths.\nVersicolor Species lies in the middle of the other two species in terms of sepal length and width.\nSpecies Virginica has larger sepal lengths but smaller sepal widths.")
@@ -100,3 +102,10 @@ print("Species Setosa has smaller sepal lengths but larger sepal widths.\nVersic
 #pair3 sepal_length v petal_length
 #pair4 sepal_width v petal_width
 #histogram3, 4, 5, 6 species compare sepal_length, width, petal_length, width
+
+axis = df.plot.hist(bins=30, alpha=0.5)
+axis.set_xlabel('Size in cm')
+plt.show()
+
+sns.pairplot(df, hue='species')
+plt.show()
