@@ -77,7 +77,14 @@ sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df)
 # Placing Legend outside the Figure
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 
-plt.show()
+#shows the figure
+#plt.show()
+
+#saves the figure - saved with particular dpi(dots per inch = clarity of image) to fit all in image file
+#https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
+plt.gcf().set_size_inches(14, 10)
+#sets the size of image in inches
+plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
 
 #pair3 sepal_length v petal_length
 #pair4 sepal_width v petal_width
