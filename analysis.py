@@ -76,14 +76,12 @@ sns.scatterplot(x="petal_length", y="petal_width", hue="species", data=df)
 #https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
 
 #sets the size of image in inches
-plt.show()
+
 #plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
 
-
-df2 = pd.read_csv("iris.csv")
 #pair2 sepal_length v sepal_width
 
-sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df2)
+sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df)
 # Placing Legend outside the Figure
 
 #shows the figure
@@ -92,7 +90,7 @@ sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df2)
 #https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
 
 #sets the size of image in inches
-plt.show()
+
 #plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
 
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
@@ -102,10 +100,25 @@ print("Species Setosa has smaller sepal lengths but larger sepal widths.\nVersic
 #pair3 sepal_length v petal_length
 #pair4 sepal_width v petal_width
 #histogram3, 4, 5, 6 species compare sepal_length, width, petal_length, width
+figure, ax = plt.subplots(2, 2, figsize=(8,8))
+
+ax[0,0].set_title("Sepal Length")
+ax[0,0].hist(df['sepal_length'], bins=8)
+
+ax[0,1].set_title("Sepal Width")
+ax[0,1].hist(df['sepal_width'], bins=6);
+
+ax[1,0].set_title("Petal Length")
+ax[1,0].hist(df['petal_length'], bins=5);
+
+ax[1,1].set_title("Petal Width")
+ax[1,1].hist(df['petal_width'], bins=5);
+
 
 axis = df.plot.hist(bins=30, alpha=0.5)
 axis.set_xlabel('Size in cm')
-plt.show()
+
 
 sns.pairplot(df, hue='species')
+
 plt.show()
