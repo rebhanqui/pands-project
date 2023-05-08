@@ -68,23 +68,34 @@ print(df.value_counts("species"))
 #dtype: int64
 
 
-
+plt.gcf().set_size_inches(14, 10)
 #pair1 petal_length v petal_width
+sns.scatterplot(x="petal_length", y="petal_width", hue="species", data=df)
+# Placing Legend outside the Figure
+#saves the figure - saved with particular dpi(dots per inch = clarity of image) to fit all in image file
+#https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
+
+#sets the size of image in inches
+plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
+
+
+df2 = pd.read_csv("iris.csv")
 #pair2 sepal_length v sepal_width
 
-sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df)
-
+sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df2)
 # Placing Legend outside the Figure
-plt.legend(bbox_to_anchor=(1, 1), loc=2)
 
 #shows the figure
 #plt.show()
-
 #saves the figure - saved with particular dpi(dots per inch = clarity of image) to fit all in image file
 #https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
-plt.gcf().set_size_inches(14, 10)
+
 #sets the size of image in inches
 plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
+
+plt.legend(bbox_to_anchor=(1, 1), loc=2)
+print("Species Setosa has smaller sepal lengths but larger sepal widths.\nVersicolor Species lies in the middle of the other two species in terms of sepal length and width.\nSpecies Virginica has larger sepal lengths but smaller sepal widths.")
+
 
 #pair3 sepal_length v petal_length
 #pair4 sepal_width v petal_width
