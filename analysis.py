@@ -48,7 +48,7 @@ print(df.describe())
 #75%        6.400000     3.300000      5.100000     1.800000
 #max        7.900000     4.400000      6.900000     2.500000
 
-print("\nTo check for any missing values we use isnull() method with sum to get the total, for this dataset there are no missing value")
+print("\nTo check for any missing values we use isnull() method with sum to get the total, for this dataset there are no missing value.")
 print(df.isnull().sum())
 #Results:
 #sepal_length    0
