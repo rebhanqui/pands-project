@@ -58,9 +58,28 @@ print(df.isnull().sum())
 #species         0
 #dtype: int64
 
+print(".value_counts shows whether the dataset is balanced or not - equal amounts of rows per species and the data type of each value")
+print(df.value_counts("species"))
+#Results:
+#species
+#setosa        50
+#versicolor    50
+#virginica     50
+#dtype: int64
+
+
 
 #pair1 petal_length v petal_width
 #pair2 sepal_length v sepal_width
+
+sns.scatterplot(x='SepalLengthCm', y='SepalWidthCm',
+                hue='Species', data=df, )
+
+# Placing Legend outside the Figure
+plt.legend(bbox_to_anchor=(1, 1), loc=2)
+
+plt.show()
+
 #pair3 sepal_length v petal_length
 #pair4 sepal_width v petal_width
 #histogram3, 4, 5, 6 species compare sepal_length, width, petal_length, width
