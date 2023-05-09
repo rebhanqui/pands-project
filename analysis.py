@@ -71,7 +71,7 @@ print(df.value_counts("species"))
 plt.gcf().set_size_inches(10, 8)
 #sets the size of image in inches
 
-sns.scatterplot(x="petal_length", y="petal_width", hue="species", data=df)
+sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
 #saves the figure - saved with particular dpi(dots per inch = clarity of image) to fit all in image file
@@ -84,9 +84,7 @@ plt.close()
 
 #pair2 sepal_length v sepal_width
 plt.gcf().set_size_inches(10, 8)
-
-
-sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df)
+sns.scatterplot(x="sepal_width", y="sepal_length", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 
 plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
@@ -97,10 +95,27 @@ print("Species Setosa has smaller sepal lengths but larger sepal widths.\nVersic
 #------
 
 #pair3 sepal_length v petal_length
+plt.gcf().set_size_inches(10, 8)
+
+
+sns.scatterplot(x="petal_length", y="sepal_length", hue="species", data=df)
+plt.legend(bbox_to_anchor=(1, 1), loc=2)
+
+plt.savefig("Sepal Length V Petal Length Scatterplot", dpi=200)
+plt.close()
 
 #------
 
 #pair4 sepal_width v petal_width
+
+plt.gcf().set_size_inches(10, 8)
+
+
+sns.scatterplot(x="petal_width", y="sepal_width", hue="species", data=df)
+plt.legend(bbox_to_anchor=(1, 1), loc=2)
+
+plt.savefig("Sepal Width V Petal Width Scatterplot", dpi=200)
+plt.close()
 
 #------
 #histogram3, 4, 5, 6 species compare sepal_length, width, petal_length, width
