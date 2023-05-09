@@ -5,7 +5,7 @@ import seaborn as sns
 
 #reading in the CSV file - acquired from:
 # Read in CSV file
-data = pd.read_csv("iris.csv")
+data = pd.read_csv("iris.csv", "a")
 
 print(data.head())
 #prints off the top 5 rows of the data and then gives us the shape (number of rows and columns of the data file)
@@ -22,8 +22,19 @@ print(data.shape)
 #Result is 150 rows and 5 columns (does not include the row numbers column)
 #(150, 5)
 
+df = pd.DataFrame(data)
+data.describe()
 
-
+#Results:
+#       sepal_length  sepal_width  petal_length  petal_width
+#count    150.000000   150.000000    150.000000   150.000000
+#mean       5.843333     3.054000      3.758667     1.198667
+#std        0.828066     0.433594      1.764420     0.763161
+#min        4.300000     2.000000      1.000000     0.100000
+#25%        5.100000     2.800000      1.600000     0.300000
+#50%        5.800000     3.000000      4.350000     1.300000
+#75%        6.400000     3.300000      5.100000     1.800000
+#max        7.900000     4.400000      6.900000     2.500000
 
 
 
@@ -44,18 +55,6 @@ print(df.info())
 #memory usage: 6.0+ KB
 print("The information gathered from the dataset shows us that the is only 1 catagorical column and all others are numeric type with non-Null entries")
 
-print("\nNext we will use the descibe() method to get a good picture of the distribution of data\n")
-print(df.describe())
-#Results:
-#       sepal_length  sepal_width  petal_length  petal_width
-#count    150.000000   150.000000    150.000000   150.000000
-#mean       5.843333     3.054000      3.758667     1.198667
-#std        0.828066     0.433594      1.764420     0.763161
-#min        4.300000     2.000000      1.000000     0.100000
-#25%        5.100000     2.800000      1.600000     0.300000
-#50%        5.800000     3.000000      4.350000     1.300000
-#75%        6.400000     3.300000      5.100000     1.800000
-#max        7.900000     4.400000      6.900000     2.500000
 
 print("\nTo check for any missing values we use isnull() method with sum to get the total, for this dataset there are no missing value.")
 print(df.isnull().sum())
