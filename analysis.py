@@ -67,38 +67,42 @@ print(df.value_counts("species"))
 #virginica     50
 #dtype: int64
 
-
-plt.gcf().set_size_inches(10, 8)
 #pair1 petal_length v petal_width
+plt.gcf().set_size_inches(10, 8)
+#sets the size of image in inches
+
 sns.scatterplot(x="petal_length", y="petal_width", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
-plt.close()
 #saves the figure - saved with particular dpi(dots per inch = clarity of image) to fit all in image file
 #https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
-
-#sets the size of image in inches
+plt.close()
+#closes the file/image so duplicates do not form in charts and in legend
+#https://stackoverflow.com/questions/36018681/stop-seaborn-plotting-multiple-figures-on-top-of-one-another
+######to stop duplicates come back to this!!!!######
+#-----
 
 #pair2 sepal_length v sepal_width
 plt.gcf().set_size_inches(10, 8)
+
+
 sns.scatterplot(x="sepal_length", y="sepal_width", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
+
 plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
 plt.close()
-#saves the figure - saved with particular dpi(dots per inch = clarity of image) to fit all in image file
-#https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
-
-#sets the size of image in inches
-
-#plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
-
 
 print("Species Setosa has smaller sepal lengths but larger sepal widths.\nVersicolor Species lies in the middle of the other two species in terms of sepal length and width.\nSpecies Virginica has larger sepal lengths but smaller sepal widths.")
 
 #------
 
 #pair3 sepal_length v petal_length
+
+#------
+
 #pair4 sepal_width v petal_width
+
+#------
 #histogram3, 4, 5, 6 species compare sepal_length, width, petal_length, width
 figure, ax = plt.subplots(2, 2, figsize=(8,8))
 
