@@ -67,6 +67,13 @@ print(df.value_counts("species"))
 #virginica     50
 #dtype: int64
 
+#Outputs a summary of each variable to a single text file:
+
+
+
+
+#------
+#Outputs a scatter plot of each pair of variables:
 #pair1 petal_length v petal_width
 plt.gcf().set_size_inches(10, 8)
 #sets the size of image in inches
@@ -118,6 +125,8 @@ plt.savefig("Sepal Width V Petal Width Scatterplot", dpi=200)
 plt.close()
 
 #------
+Saves a histogram of each variable to png files
+
 #histogram3, 4, 5, 6 species compare sepal_length, width, petal_length, width
 figure, ax = plt.subplots(2, 2, figsize=(8,8))
 
@@ -137,14 +146,7 @@ plt.savefig("Comparison")
 
 #-----
 
-axis = df.plot.hist(bins=30, alpha=0.5)
-axis.set_xlabel('Size in cm')
-plt.legend(bbox_to_anchor=(1, 1), loc=2)
-plt.savefig("Histogram")
-
-#-----
-
 plt.gcf().set_size_inches(14, 10)
 sns.pairplot(df, hue='species')
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
-plt.savefig("Species and their value pairs in Width and Length")
+plt.savefig("Overview of Species Comparison")
