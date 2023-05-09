@@ -125,7 +125,7 @@ plt.savefig("Sepal Width V Petal Width Scatterplot", dpi=200)
 plt.close()
 
 #------
-Saves a histogram of each variable to png files
+#Saves a histogram of each variable to png files
 
 #histogram3, 4, 5, 6 species compare sepal_length, width, petal_length, width
 figure, ax = plt.subplots(2, 2, figsize=(8,8))
