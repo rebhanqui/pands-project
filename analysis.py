@@ -1,12 +1,14 @@
+import numpy as np  
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 #reading in the CSV file - acquired from:
-df = pd.read_csv("iris.csv")
+# Read in CSV file
+data = pd.read_csv("iris.csv")
 
+print(data.head())
 #prints off the top 5 rows of the data and then gives us the shape (number of rows and columns of the data file)
-print(df.head())
 #Result:
 #   sepal_length  sepal_width  petal_length  petal_width species
 #0           5.1          3.5           1.4          0.2  setosa
@@ -14,9 +16,16 @@ print(df.head())
 #2           4.7          3.2           1.3          0.2  setosa
 #3           4.6          3.1           1.5          0.2  setosa
 #4           5.0          3.6           1.4          0.2  setosa
-print(df.shape)
+
+
+print(data.shape)
 #Result is 150 rows and 5 columns (does not include the row numbers column)
 #(150, 5)
+
+
+
+
+
 
 #using .info we can print the data types to avoid null data etc
 print(df.info())
@@ -71,13 +80,11 @@ print(df.value_counts("species"))
 
 
 
-
 #------
 #Outputs a scatter plot of each pair of variables:
 #pair1 petal_length v petal_width
 plt.gcf().set_size_inches(10, 8)
 #sets the size of image in inches
-
 sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
@@ -93,7 +100,6 @@ plt.close()
 plt.gcf().set_size_inches(10, 8)
 sns.scatterplot(x="sepal_width", y="sepal_length", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
-
 plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
 plt.close()
 
@@ -103,18 +109,14 @@ print("Species Setosa has smaller sepal lengths but larger sepal widths.\nVersic
 
 #pair3 sepal_length v petal_length
 plt.gcf().set_size_inches(10, 8)
-
-
 sns.scatterplot(x="petal_length", y="sepal_length", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
-
 plt.savefig("Sepal Length V Petal Length Scatterplot", dpi=200)
 plt.close()
 
 #------
 
 #pair4 sepal_width v petal_width
-
 plt.gcf().set_size_inches(10, 8)
 sns.scatterplot(x="petal_width", y="sepal_width", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
@@ -122,8 +124,8 @@ plt.savefig("Sepal Width V Petal Width Scatterplot", dpi=200)
 plt.close()
 
 #------
-#pair5
-#Sepal Length V Petal Width
+
+#pair5 Sepal Length V Petal Width
 plt.gcf().set_size_inches(10, 8)
 sns.scatterplot(x="petal_width", y="sepal_length", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
@@ -131,8 +133,8 @@ plt.savefig("Sepal Length V Petal Width Scatterplot", dpi=200)
 plt.close()
 
 #------
-#pair6
-#Sepal Width V Petal Length
+
+#pair6 Sepal Width V Petal Length
 plt.gcf().set_size_inches(10, 8)
 sns.scatterplot(x="sepal_width", y="petal_length", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
@@ -140,6 +142,7 @@ plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Sepal Width V Petal Length Scatterplot", dpi=200)
 plt.close()
 
+#------
 
 #Saves a histogram of each variable to png files
 
