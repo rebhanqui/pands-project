@@ -116,11 +116,8 @@ plt.close()
 #pair4 sepal_width v petal_width
 
 plt.gcf().set_size_inches(10, 8)
-
-
 sns.scatterplot(x="petal_width", y="sepal_width", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
-
 plt.savefig("Sepal Width V Petal Width Scatterplot", dpi=200)
 plt.close()
 
@@ -128,11 +125,8 @@ plt.close()
 #pair5
 #Sepal Length V Petal Width
 plt.gcf().set_size_inches(10, 8)
-
-
 sns.scatterplot(x="petal_width", y="sepal_length", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
-
 plt.savefig("Sepal Length V Petal Width Scatterplot", dpi=200)
 plt.close()
 
@@ -140,8 +134,6 @@ plt.close()
 #pair6
 #Sepal Width V Petal Length
 plt.gcf().set_size_inches(10, 8)
-
-
 sns.scatterplot(x="sepal_width", y="petal_length", hue="species", data=df)
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 
