@@ -5,7 +5,7 @@ import seaborn as sns
 
 #reading in the CSV file - acquired from:
 # Read in CSV file
-data = pd.read_csv("iris.csv", "a")
+data = pd.read_csv("iris.csv")
 
 print(data.head())
 #prints off the top 5 rows of the data and then gives us the shape (number of rows and columns of the data file)
@@ -25,6 +25,7 @@ print(data.shape)
 df = pd.DataFrame(data)
 data.describe()
 
+
 #Results:
 #       sepal_length  sepal_width  petal_length  petal_width
 #count    150.000000   150.000000    150.000000   150.000000
@@ -41,7 +42,6 @@ data.describe()
 #using .info we can print the data types to avoid null data etc
 print(df.info())
 #Results:
-#<class 'pandas.core.frame.DataFrame'>
 #RangeIndex: 150 entries, 0 to 149
 #Data columns (total 5 columns):
 #    Column        Non-Null Count  Dtype  
@@ -53,10 +53,8 @@ print(df.info())
 #4   species       150 non-null    object 
 #dtypes: float64(4), object(1)
 #memory usage: 6.0+ KB
-print("The information gathered from the dataset shows us that the is only 1 catagorical column and all others are numeric type with non-Null entries")
 
 
-print("\nTo check for any missing values we use isnull() method with sum to get the total, for this dataset there are no missing value.")
 print(df.isnull().sum())
 #Results:
 #sepal_length    0
@@ -66,7 +64,6 @@ print(df.isnull().sum())
 #species         0
 #dtype: int64
 
-print(".value_counts shows whether the dataset is balanced or not - equal amounts of rows per species and the data type of each value")
 print(df.value_counts("species"))
 #Results:
 #species
@@ -76,9 +73,25 @@ print(df.value_counts("species"))
 #dtype: int64
 
 #Outputs a summary of each variable to a single text file:
+species = ["setosa", "versicolor", "virginica"]
+setosa = data.iloc[:50, [2]]
+versicolor = data.iloc[51:101, [2]]
+virginica = data.iloc[101:151, [2]]
 
+x = [species]
+y = [setosa, versicolor, virginica]
+plt.plot(x, y)
+#plt.hist(setosa, bins=8, label="setosa", color="#AB73FF", ec="#3E1380")
+#plt.hist(versicolor, bins=8, label="versicolor", color="#FF4F92", ec="#800132")
+#plt.hist(virginica, bins=8, label="virginica", color="#4FFF87", ec="#288043")
 
+plt.title("Petal Length Distribution")
 
+#https://stackoverflow.com/questions/59650942/plotting-and-labeling-each-bin-in-a-histogram
+#https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html
+plt.xticks(x, labels = species, rotation = "vertical")
+plt.savefig("Test.png")
+plt.close()
 #------
 #Outputs a scatter plot of each pair of variables:
 #pair1 petal_length v petal_width
@@ -102,7 +115,6 @@ plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
 plt.close()
 
-print("Species Setosa has smaller sepal lengths but larger sepal widths.\nVersicolor Species lies in the middle of the other two species in terms of sepal length and width.\nSpecies Virginica has larger sepal lengths but smaller sepal widths.")
 
 #------
 
@@ -145,26 +157,29 @@ plt.close()
 
 #Saves a histogram of each variable to png files
 
-#histogram3, 4, 5, 6 species compare sepal_length, width, petal_length, width
-figure, ax = plt.subplots(2, 2, figsize=(8,8))
+#histogram, 4, 5, 6 species compare sepal_length, width, petal_length, width
 
+figure, ax = plt.subplots(2, 2, figsize=(8,8))
+#https://www.statology.org/matplotlib-histogram-color/ - EC
 ax[0,0].set_title("Sepal Length")
-ax[0,0].hist(df['sepal_length'], bins=8)
+ax[0,0].hist(df['sepal_length'], color="#86f7ee", ec="#1ca398", bins=8)
 
 ax[0,1].set_title("Sepal Width")
-ax[0,1].hist(df['sepal_width'], bins=6);
+ax[0,1].hist(df['sepal_width'], color="#a996f2", ec="#371ca3", bins=8);
 
 ax[1,0].set_title("Petal Length")
-ax[1,0].hist(df['petal_length'], bins=5);
+ax[1,0].hist(df['petal_length'], color="#74a684", ec="#125928", bins=8);
 
 ax[1,1].set_title("Petal Width")
-ax[1,1].hist(df['petal_width'], bins=5);
+ax[1,1].hist(df['petal_width'], color="#faee46", ec="#736d1e", bins=8);
 
-plt.savefig("Comparison")
+plt.savefig("Histograms")
 
 #-----
 
 plt.gcf().set_size_inches(14, 10)
-sns.pairplot(df, hue='species')
+sns.pairplot(df, hue="species")
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Overview of Species Comparison")
+
+del df
