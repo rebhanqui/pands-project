@@ -45,6 +45,7 @@ Value_counts() used with "species" returns the count of each species in the date
 |<class 'pandas.core.frame.DataFrame'>|
 
 Finally, we check that there are no null values in the data and this results in:
+|    |    |
 |-------------|----|
 |sepal_length |   0|
 |sepal_width  |   0|
