@@ -30,12 +30,13 @@ Results of head() method[^2]:
 |2     |   4.7       |    3.2      |     1.3       |   0.2  |setosa|
 |3     |   4.6       |   3.1      |     1.5      |    0.2  |setosa|
 |4     |  5.0        |  3.6        |   1.4        |  0.2  |setosa|
-*this shows us the first 5 rows of data and their column titles which come in useful later to source data required*
+|*this shows us the first 5 rows of data and their column titles which come in useful later to source data required*|
 
 The results of the shape() method shows us that there are 5 columns and 150 rows of data in a simple result: (150, 5) (Rows, Columns)[^3]
 
 Value_counts() used with species index returns the count of each species in the date. In this case the result is even with 50 rows for each making up the 150 total.
-
+|species|data values|
+|----|-------|
 |setosa    |    50|
 |versicolor |   50|
 |virginica   |  50|
