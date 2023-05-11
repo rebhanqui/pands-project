@@ -28,31 +28,19 @@ print(data.species.value_counts())
 #plots 1 of 4 attributes
 #plt.hist(data[0])
 
-#plots all 4 attributes
-#https://www.statology.org/matplotlib-histogram-color/ - EC
-#https://www.youtube.com/watch?v=02BFXhPQWHQ
-#histogram, 4, 5, 6 species compare sepal_length, width, petal_length, width
 
-# this histogram shows that the four attributes are either evenly distributed (bell shaped not binary)or not, sepal length and width are evenly distrib petal is not
-fig, ax = plt.subplots(2, 2, figsize = (10, 8))
-#saves 4 figures for each attribute into one figure
-ax[0, 0].hist(data[0], label=cols[0])
-ax[0, 1].hist(data[1], alpha=1, label=cols[1])
-ax[1, 0].hist(data[2], alpha=0.6, label=cols[2])
-ax[1, 1].hist(data[3], alpha=0.5, label=cols[3])
-#alpha 1 makes top most shape transparent fully, the rest lesser modes of transparancy
-plt.legend()
-#needs legends on each!!!###############
-plt.savefig("Histograms")
-plt.close()
 
 #changes the color of the scatter dots to signify each variant of iris
 #dictionary for color assignment
 colors = {"setosa":"violet", "virginica":"yellow", "varsicolor":"pink"}
+
 plt.scatter(
-    data[2],
-    data[3],
+    data[0],
+    data[1],
     c=data["species"].map(colors))
+plt.xlabel(cols[0])
+plt.ylabel(cols[1])
+plt.title("Iris Data Scatterplot ")
 plt.savefig("scatterplot.png")
 
 
