@@ -99,6 +99,58 @@ file.close()
 
 ---
 
+### Part 3: Histograms, Scatterplots, Etc
+
+For this project we are to do the following:
+
+1. Output a summary of each variable to a single text file.
+2. Saves a histogram of each variable to png files.
+3. Outputs a scatter plot of each pair of variables.
+4. Performs any other analysis you think is appropriate.
+
+We have already output the summary for us to understand the values and their distributions etc and now we will create visual representations of the data to better understand the differences and comparisons of the 3 species of iris and their 4 attributes/values.
+
+---
+
+#### Histograms
+
+For the historgram section of this project it took me awhile to wrap my head around using the data I can grab from the dataframe and putting into a visual.
+In the end I found the best way to do it was to make a histogram of all 4 attributes to compare their distributions
+
+```python
+cols = ["sepal_length", "sepal_width", "petal_width", "petal_length"]
+df.rename(columns = {cols[0]:0, cols[1]:1, cols[2]:2, cols[3]:3}, inplace=True)
+df.loc[::50]
+```
+
+Renaming column labels using a dictionary to use later when needed for naming in the histogram, and loc() property which works like the head() method to return the specified amount of rows and columns from the dataset. Here we request all columns and every 50th row (the first row of each species) [^13] I thought it was best to stick with histograms to start as box plots did not make too much sense to me in regards to using them and felt not many would either.
+
+The following histograms show that the four attributes are either evenly distributed (bell shaped or not), sepal length and width are evenly distributed so have an even or normal distribution but petal length and width do not. [^14]
+
+```python
+fig, ax = plt.subplots(2, 2, figsize = (10, 8))
+
+ax[0, 0].set_title("Sepal Length")
+ax[0, 0].hist(df[0], label=cols[0], color="#F7EE77", ec="#DED66A")
+ax[0, 1].set_title("Sepal Width")
+ax[0, 1].hist(df[1], alpha=1, label=cols[1], color="#511FC2", ec="#1B0B42")
+ax[1, 0].set_title("Petal Width")
+ax[1, 0].hist(df[2], alpha=0.6, label=cols[2], color="#F78E77", ec="#B86A58")
+ax[1, 1].set_title("Petal Width")
+ax[1, 1].hist(df[3], alpha=0.5, label=cols[3], color="#41AB85", ec="#296B53")
+
+plt.legend()
+plt.savefig("Histograms")
+```
+
+![alt text](Histograms.png)
+
+[^14] [^15] [^16] [^17]
+
+---
+
+---
+
 ### References
 
 [^1]: https://gist.github.com/curran/a08a1080b88344b0c8a7
@@ -110,6 +162,14 @@ file.close()
 [^7]: https://www.statology.org/pandas-describe-only-mean-std/
 [^8]: https://www.askpython.com/python/examples/calculate-summary-statistics#
 [^9]: https://www.freecodecamp.org/news/file-handling-in-python/
+https://www.pythontutorial.net/python-basics/python-write-text-file/
 [^10]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
 [^11]: https://www.youtube.com/watch?v=vmEHCJofslg&t=1068s
 [^12]: https://www.markdownguide.org/cheat-sheet/
+[^13]: https://www.youtube.com/watch?v=02BFXhPQWHQ
+[^14]:https://www.statology.org/normality-test-python/
+https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
+[^15]: https://matplotlib.org/stable/gallery/statistics/hist.html
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html
+[^16]: https://www.statology.org/matplotlib-histogram-color/
+

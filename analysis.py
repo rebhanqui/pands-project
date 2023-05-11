@@ -96,16 +96,16 @@ df.rename(columns = {cols[0]:0, cols[1]:1, cols[2]:2, cols[3]:3}, inplace=True)
 #like data.head shows every 50th row or the first row of each species data
 df.loc[::50]
 
-#https://www.statology.org/matplotlib-histogram-color/ - EC
-#https://matplotlib.org/stable/gallery/statistics/hist.html
-#https://www.youtube.com/watch?v=02BFXhPQWHQ
+# - EC
+#
+#
 #histogram, 4, 5, 6 species compare sepal_length, width, petal_length, width
 
 # this histogram shows that the four attributes are either evenly distributed (bell shaped not binary)or not, sepal length and width are evenly distrib petal is not
 fig, ax = plt.subplots(2, 2, figsize = (10, 8))
 #saves 4 figures for each attribute into one figure
 
-#sets ax title https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/:
+
 ax[0, 0].set_title("Sepal Length")
 ax[0, 0].hist(df[0], label=cols[0], color="#F7EE77", ec="#DED66A")
 ax[0, 1].set_title("Sepal Width")
@@ -116,9 +116,7 @@ ax[1, 1].set_title("Petal Width")
 ax[1, 1].hist(df[3], alpha=0.5, label=cols[3], color="#41AB85", ec="#296B53")
 #alpha 1 makes top most shape transparent fully, the rest lesser modes of transparancy
 
-
 plt.legend()
-#needs legends on each!!!###############
 plt.savefig("Histograms")
 
 
