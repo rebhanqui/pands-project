@@ -79,14 +79,15 @@ This results shows us the count of each column with also the mean value, standar
 |75%     | 6.400000   | 3.300000   | 5.100000       | 1.800000|
 |max      |7.900000   | 4.400000  |  6.900000       | 2.500000|
 
-Once this prints correctly we can continue and open and write a new file with these contents at the same time (see Fig: summary.txt)
+Once this prints correctly we can continue and open and write a new file with these contents at the same time (see Fig: summary.txt). We call the variable "summarize" in order to read the file to get the information that will be written into the new file using write() method and to_string() [^9] [^10] [^11]
 
 ```python
 with open ("summary.txt", "w+") as file:
     file.write(summarize.to_string())
 file.close()
 ```
-![screenshot of summary.txt](summary.txt.png)
+
+![screenshot of summary.txt](summary.txt.png)[^12]
 
 ### References
 
@@ -98,3 +99,7 @@ file.close()
 [^6]: https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
 [^7]: https://www.statology.org/pandas-describe-only-mean-std/
 [^8]: https://www.askpython.com/python/examples/calculate-summary-statistics#
+[^9]: https://www.freecodecamp.org/news/file-handling-in-python/
+[^10]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
+[^11]: https://www.youtube.com/watch?v=vmEHCJofslg&t=1068s
+[^12]: https://www.markdownguide.org/cheat-sheet/
