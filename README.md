@@ -212,6 +212,8 @@ To end the project I found a way to show all the information in one large graphi
 It shows sepal lengths have a pretty bell shaped in each iris type and are centered on the graph, so this attribute has an even distribution, as is sepal width.
 Setosa's attributes show to be most evenly distributed while virginica is only even in petal width. Petal lengths vary while a small amount of virginica sepal length and widths are abnormal the bigger the sizes of each attribute goes.
 
+---
+
 ![Attribute Distribution Comparison Charts](speciesoverview.png)
 
 [^26] [^27] [^28]
