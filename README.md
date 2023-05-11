@@ -35,6 +35,7 @@ df = pd.read_csv("iris.csv")
 print(df.head())
 print(df.shape())
 ```
+
 Results of head() method[^2]:
 |   |sepal_length | sepal_width | petal_length | petal_width | species |
 |------|------------|-------------|------------|---------------|---------|
@@ -55,7 +56,7 @@ Value_counts() used with "species" returns the count of each species in the date
 |versicolor |   50|
 |virginica   |  50|
 |Name: species, dtype: int64|
-|<class 'pandas.core.frame.DataFrame'>|
+|`<class 'pandas.core.frame.DataFrame'>`|
 
 Finally, we check that there are no null values in the data and this results in: [^4]
 |  attribute  |  isnull count  |
@@ -153,7 +154,7 @@ plt.savefig("Histograms")
 
 ![alt text](Histograms.png)
 
-[^19] [^20] [^21] 
+[^19] [^20] [^21]
 
 ---
 
@@ -201,7 +202,7 @@ With these scatterplots we can see a few different things.
 
 ### Conclusion
 
-To end the project I found a way to show all the information in one large graphic. Depicting the distribution type along side the scatterplots related to each attribute comparison. 
+To end the project I found a way to show all the information in one large graphic. Depicting the distribution type along side the scatterplots related to each attribute comparison.
 
 - 0 = sepal length
 - 1 = sepal width
@@ -213,7 +214,7 @@ Setosa's attributes show to be most evenly distributed while virginica is only e
 
 ![Attribute Distribution Comparison Charts](speciesoverview.png)
 
-[26^] [^27] [^28]
+[^26] [^27] [^28]
 
 ---
 
