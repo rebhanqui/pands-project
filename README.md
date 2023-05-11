@@ -8,13 +8,18 @@
 | Author: | Rebecca Hannah Quinn |
 | Student Number: | G00425671 |
 
+---
 
 ### Investigating Fisher's Iris Data Set
+
 The Iris Data Project is a well-known dataset in the machine learning community. It contains 150 samples of iris flowers, where each sample has four features/attributes: sepal length, sepal width, petal length, and petal width. The samples are equally distributed among three different species: setosa, versicolor, and virginica. This dataset is often used for classification tasks in machine learning and those learn data analytics.[^1]
 
 For this project we are to creates various graphs from the data set downloaded so we can better understand the data within.
 
+---
+
 ### Part 1: Reading In The Data
+
 To start we use some methods to read the data and make sense of what is there in order to be able to code the histogram and scatterplots that follow.
 
 ```python
@@ -55,7 +60,10 @@ Finally, we check that there are no null values in the data and this results in:
 |dtype: int64 | *datatype*|
 [^5]
 
-### Part 2: Reading And Writing Data 
+---
+
+### Part 2: Reading And Writing Data
+
 [^6]
 
 In the second part of this we look at how to read and write data using our initial file read in and the to write a second file to save the summer of the describe() method.[^7] [^8]
@@ -88,6 +96,8 @@ file.close()
 ```
 
 ![screenshot of summary.txt](summary.txt.png)[^12]
+
+---
 
 ### References
 
