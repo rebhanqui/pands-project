@@ -77,7 +77,7 @@ print(df.value_counts("species"))
 #pair1 petal_length v petal_width
 plt.gcf().set_size_inches(10, 8)
 #sets the size of image in inches
-sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=df)
+sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
 #saves the figure - saved with particular dpi(dots per inch = clarity of image) to fit all in image file
@@ -90,7 +90,7 @@ plt.close()
 
 #pair2 sepal_length v sepal_width
 plt.gcf().set_size_inches(10, 8)
-sns.scatterplot(x="sepal_width", y="sepal_length", hue="species", data=df)
+sns.scatterplot(x="sepal_width", y="sepal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Sepal Width V Sepal Length Scatterplot", dpi=200)
 plt.close()
@@ -100,7 +100,7 @@ plt.close()
 
 #pair3 sepal_length v petal_length
 plt.gcf().set_size_inches(10, 8)
-sns.scatterplot(x="petal_length", y="sepal_length", hue="species", data=df)
+sns.scatterplot(x="petal_length", y="sepal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Sepal Length V Petal Length Scatterplot", dpi=200)
 plt.close()
@@ -109,7 +109,7 @@ plt.close()
 
 #pair4 sepal_width v petal_width
 plt.gcf().set_size_inches(10, 8)
-sns.scatterplot(x="petal_width", y="sepal_width", hue="species", data=df)
+sns.scatterplot(x="petal_width", y="sepal_width", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Sepal Width V Petal Width Scatterplot", dpi=200)
 plt.close()
@@ -118,7 +118,7 @@ plt.close()
 
 #pair5 Sepal Length V Petal Width
 plt.gcf().set_size_inches(10, 8)
-sns.scatterplot(x="petal_width", y="sepal_length", hue="species", data=df)
+sns.scatterplot(x="petal_width", y="sepal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Sepal Length V Petal Width Scatterplot", dpi=200)
 plt.close()
@@ -127,9 +127,8 @@ plt.close()
 
 #pair6 Sepal Width V Petal Length
 plt.gcf().set_size_inches(10, 8)
-sns.scatterplot(x="sepal_width", y="petal_length", hue="species", data=df)
+sns.scatterplot(x="sepal_width", y="petal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
-
 plt.savefig("Sepal Width V Petal Length Scatterplot", dpi=200)
 plt.close()
 
@@ -153,7 +152,6 @@ ax[0, 0].hist(df[0], label=cols[0], color="#F7EE77", ec="#DED66A")
 ax[0, 1].hist(df[1], alpha=1, label=cols[1], color="#511FC2", ec="#1B0B42")
 ax[1, 0].hist(df[2], alpha=0.6, label=cols[2], color="#F78E77", ec="#B86A58")
 ax[1, 1].hist(df[3], alpha=0.5, label=cols[3], color="#41AB85", ec="#296B53")
-
 #alpha 1 makes top most shape transparent fully, the rest lesser modes of transparancy
 
 #needs legends on each!!!###############
