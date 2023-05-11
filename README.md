@@ -79,7 +79,17 @@ This results shows us the count of each column with also the mean value, standar
 |75%     | 6.400000   | 3.300000   | 5.100000       | 1.800000|
 |max      |7.900000   | 4.400000  |  6.900000       | 2.500000|
 
+Once this prints correctly we can continue and open and write a new file with these contents at the same time (see Fig: summary.txt)
+
+```python
+with open ("summary.txt", "w+") as file:
+    file.write(summarize.to_string())
+file.close()
+```
+![screenshot of summary.txt](summary.txt.png)
+
 ### References
+
 [^1]: https://gist.github.com/curran/a08a1080b88344b0c8a7
 [^2]: https://www.w3schools.com/python/pandas/ref_df_head.asp#:~:text=Definition%20and%20Usage,a%20number%20is%20not%20specified.&text=Note%3A%20The%20column%20names%20will,addition%20to%20the%20specified%20rows.
 [^3]: https://www.digitalocean.com/community/tutorials/python-shape-method#
