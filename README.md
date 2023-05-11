@@ -13,8 +13,9 @@
 ### Investigating Fisher's Iris Data Set
 
 The Iris Data Project is a well-known dataset in the machine learning community. It contains 150 samples of iris flowers, where each sample has four features/attributes: sepal length, sepal width, petal length, and petal width. The samples are equally distributed among three different species: setosa, versicolor, and virginica. This dataset is often used for classification tasks in machine learning and those learn data analytics.[^1]
+As you can see below of the images of each flower in this data set, there is not many defining differences, and from this data set you will see even among the 3 varieties the differences are miniscule as close as it is in the samples themselves.
 
-For this project we are to creates various graphs from the data set downloaded so we can better understand the data within.
+For this project we are to creates various graphs from the data set downloaded so we can better understand the data within and the differences and their comparisons.
 
 ---
 
