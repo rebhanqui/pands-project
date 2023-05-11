@@ -45,14 +45,14 @@ Value_counts() used with "species" returns the count of each species in the date
 |<class 'pandas.core.frame.DataFrame'>|
 
 Finally, we check that there are no null values in the data and this results in:
-|    |    |
+|  attribute  |  isnull count  |
 |-------------|----|
 |sepal_length |   0|
 |sepal_width  |   0|
 |petal_length |   0|
 |petal_width  |   0|
 |species      |   0|
-|dtype: int64 |
+|dtype: int64 | datatype|
 
 ### References
 [^1]: https://gist.github.com/curran/a08a1080b88344b0c8a7
