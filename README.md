@@ -198,6 +198,9 @@ With these scatterplots we can see a few different things.
 
 ---
 
+### Conclusion
+
+To end the project I found a way to show all the information in one large graphic. Depicting the distribution type along side the scatterplots related to each attribute comparison. 
 ---
 
 ### References

@@ -1,3 +1,5 @@
+#Author: Rebecca Quinn
+
 import numpy as np  
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -26,22 +28,19 @@ with open ("summary.txt", "w+") as file:
     file.write(summarize.to_string())
 file.close()
 
-#------
+
 #Outputs a scatter plot of each pair of variables:
 #pair1 petal_length v petal_width
 plt.gcf().set_size_inches(10, 8)
 #sets the size of image in inches
 sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
-#palette creates colors for scatter dots https://cmdlinetips.com/2019/04/how-to-specify-colors-to-scatter-plots-in-python/
+#palette creates colors for scatter dots
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("pwvplscatterplot.png", dpi=200)
 #saves the figure - saved with particular dpi(dots per inch = clarity of image) to fit all in image file
-#https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
 plt.close()
 #closes the file/image so duplicates do not form in charts and in legend
-#https://stackoverflow.com/questions/36018681/stop-seaborn-plotting-multiple-figures-on-top-of-one-another
 
-#-----
 
 #pair2 sepal_length v sepal_width
 plt.gcf().set_size_inches(10, 8)
@@ -51,8 +50,6 @@ plt.savefig("swvslscatterplot.png", dpi=200)
 plt.close()
 
 
-#------
-
 #pair3 sepal_length v petal_length
 plt.gcf().set_size_inches(10, 8)
 sns.scatterplot(x="petal_length", y="sepal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
@@ -60,7 +57,6 @@ plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("slvplscatterplot.png", dpi=200)
 plt.close()
 
-#------
 
 #pair4 sepal_width v petal_width
 plt.gcf().set_size_inches(10, 8)
@@ -69,7 +65,6 @@ plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("swvpwcatterplot.png", dpi=200)
 plt.close()
 
-#------
 
 #pair5 Sepal Length V Petal Width
 plt.gcf().set_size_inches(10, 8)
@@ -78,7 +73,6 @@ plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("slvpwscatterplot.png", dpi=200)
 plt.close()
 
-#------
 
 #pair6 Sepal Width V Petal Length
 plt.gcf().set_size_inches(10, 8)
@@ -87,7 +81,6 @@ plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("swvplscatterplot.png", dpi=200)
 plt.close()
 
-#------
 
 #Saves a histogram of the 4 variables to png files
 cols = ["sepal_length", "sepal_width", "petal_width", "petal_length"]
@@ -112,11 +105,11 @@ ax[1, 1].hist(df[3], alpha=0.5, label=cols[3], color="#41AB85", ec="#296B53")
 #alpha 1 makes top most shape transparent fully, the rest lesser modes of transparancy
 
 plt.savefig("Histograms.png")
+plt.close()
 
-
-#-----
-
+#a comparison of the attributes in one graphic, includes scatterplots and distribution plots.
 plt.gcf().set_size_inches(14, 10)
-sns.pairplot(df, hue="species", palette="hls")
+sns.pairplot(df, hue="species", palette="hls", markers=["o", "s", "d"])
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
-plt.savefig("Overview of Species Comparison")
+plt.savefig("speciesoverview.png")
+plt.close()
