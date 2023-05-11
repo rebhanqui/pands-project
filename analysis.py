@@ -78,6 +78,7 @@ print(df.value_counts("species"))
 plt.gcf().set_size_inches(10, 8)
 #sets the size of image in inches
 sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
+#palette creates colors for scatter dots https://cmdlinetips.com/2019/04/how-to-specify-colors-to-scatter-plots-in-python/
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
 #saves the figure - saved with particular dpi(dots per inch = clarity of image) to fit all in image file
@@ -148,12 +149,20 @@ df.loc[::50]
 # this histogram shows that the four attributes are either evenly distributed (bell shaped not binary)or not, sepal length and width are evenly distrib petal is not
 fig, ax = plt.subplots(2, 2, figsize = (10, 8))
 #saves 4 figures for each attribute into one figure
+
+#sets ax title https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/:
+ax[0, 0].set_title("Sepal Length")
 ax[0, 0].hist(df[0], label=cols[0], color="#F7EE77", ec="#DED66A")
+ax[0, 1].set_title("Sepal Width")
 ax[0, 1].hist(df[1], alpha=1, label=cols[1], color="#511FC2", ec="#1B0B42")
+ax[1, 0].set_title("Petal Width")
 ax[1, 0].hist(df[2], alpha=0.6, label=cols[2], color="#F78E77", ec="#B86A58")
+ax[1, 1].set_title("Petal Width")
 ax[1, 1].hist(df[3], alpha=0.5, label=cols[3], color="#41AB85", ec="#296B53")
 #alpha 1 makes top most shape transparent fully, the rest lesser modes of transparancy
 
+
+plt.legend()
 #needs legends on each!!!###############
 plt.savefig("Histograms")
 
