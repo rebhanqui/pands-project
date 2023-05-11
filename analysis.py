@@ -73,25 +73,8 @@ print(df.value_counts("species"))
 #dtype: int64
 
 #Outputs a summary of each variable to a single text file:
-species = ["setosa", "versicolor", "virginica"]
-setosa = data.iloc[:50, [2]]
-versicolor = data.iloc[51:101, [2]]
-virginica = data.iloc[101:151, [2]]
 
-x = [species]
-y = [setosa, versicolor, virginica]
-plt.plot(x, y)
-#plt.hist(setosa, bins=8, label="setosa", color="#AB73FF", ec="#3E1380")
-#plt.hist(versicolor, bins=8, label="versicolor", color="#FF4F92", ec="#800132")
-#plt.hist(virginica, bins=8, label="virginica", color="#4FFF87", ec="#288043")
 
-plt.title("Petal Length Distribution")
-
-#https://stackoverflow.com/questions/59650942/plotting-and-labeling-each-bin-in-a-histogram
-#https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html
-plt.xticks(x, labels = species, rotation = "vertical")
-plt.savefig("Test.png")
-plt.close()
 #------
 #Outputs a scatter plot of each pair of variables:
 #pair1 petal_length v petal_width
@@ -156,7 +139,19 @@ plt.close()
 #------
 
 #Saves a histogram of each variable to png files
+x = 
+y = ["setosa", "varsicolor", "virginica"]
 
+
+plt.hist(x, y, ec="red")
+
+plt.xlabel("Iris Species")
+plt.ylabel("Iris Measurements")
+
+
+plt.xticks(y)
+plt.savefig("Test.png")
+plt.close()
 #histogram, 4, 5, 6 species compare sepal_length, width, petal_length, width
 
 figure, ax = plt.subplots(2, 2, figsize=(8,8))
