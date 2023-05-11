@@ -56,9 +56,9 @@ Finally, we check that there are no null values in the data and this results in:
 [^5]
 
 ### Part 2: Reading And Writing Data 
-[^7]
+[^6]
 
-In the second part of this we look at how to read and write data using our initial file read in and the to write a second file to save the summer of the describe() method.[^6] [^8]
+In the second part of this we look at how to read and write data using our initial file read in and the to write a second file to save the summer of the describe() method.[^7] [^8]
 
 In order to write a new file which contains a summary of the data we must first create a variable and method describe:
 
@@ -68,17 +68,16 @@ summarize = df.describe()
 
 This results shows us the count of each column with also the mean value, standard deviation and min and max values in the summary as follows. The 25%, 50% and 75% shows how much of your data is has the corrosponding value or less:
 
-|      |   ID   |    0      |     1     |      3      |     2     |
-|------|------|-----------|-----------|-------------|-----------|
-|count |150.000000 | 150.000000 | 150.000000 | 150.000000|
-|mean  |   5.843333 |   3.054000    |3.758667 |   1.198667|
-|std   |   0.828066  |  0.433594    |1.764420  |  0.763161|
-|min   |   4.300000   | 2.000000    |1.000000   | 0.100000|
-|25%   |   5.100000   | 2.800000    |1.600000   | 0.300000|
-|50%    |  5.800000   | 3.000000    |4.350000   | 1.300000|
-|75%     | 6.400000   | 3.300000   | 5.100000   | 1.800000|
-|max      |7.900000   | 4.400000  |  6.900000   | 2.500000|
-
+|   ID   |    0      |     1     |      3      |     2     |
+|------|-----------|-----------|-------------|-----------|
+|count |150.000000 | 150.000000 | 150.000000        | 150.000000|
+|mean  |   5.843333 |   3.054000    |3.758667       | 1.198667|
+|std   |   0.828066  |  0.433594    |1.764420       | 0.763161|
+|min   |   4.300000   | 2.000000    |1.000000       | 0.100000|
+|25%   |   5.100000   | 2.800000    |1.600000       | 0.300000|
+|50%    |  5.800000   | 3.000000    |4.350000       | 1.300000|
+|75%     | 6.400000   | 3.300000   | 5.100000       | 1.800000|
+|max      |7.900000   | 4.400000  |  6.900000       | 2.500000|
 
 ### References
 [^1]: https://gist.github.com/curran/a08a1080b88344b0c8a7
@@ -86,6 +85,6 @@ This results shows us the count of each column with also the mean value, standar
 [^3]: https://www.digitalocean.com/community/tutorials/python-shape-method#
 [^4]: https://www.geeksforgeeks.org/working-with-missing-data-in-pandas/
 [^5]:https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
-[^6]: https://www.statology.org/pandas-describe-only-mean-std/
-[^7]: https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
+[^6]: https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
+[^7]: https://www.statology.org/pandas-describe-only-mean-std/
 [^8]: https://www.askpython.com/python/examples/calculate-summary-statistics#
