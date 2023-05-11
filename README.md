@@ -34,7 +34,8 @@ Results of head() method[^2]:
 
 The results of the shape() method shows us that there are 5 columns and 150 rows of data in a simple result: (150, 5) (Rows, Columns)[^3]
 
-Value_counts() used with species index returns the count of each species in the date. In this case the result is even with 50 rows for each making up the 150 total.
+Value_counts() used with "species" returns the count of each species in the date. In this case the result is even with 50 rows for each making up the 150 total:
+
 |species|data values|
 |----|-------|
 |setosa    |    50|
@@ -42,6 +43,15 @@ Value_counts() used with species index returns the count of each species in the 
 |virginica   |  50|
 |Name: species, dtype: int64|
 |<class 'pandas.core.frame.DataFrame'>|
+
+Finally, we check that there are no null values in the data and this results in:
+|-------------|----|
+|sepal_length |   0|
+|sepal_width  |   0|
+|petal_length |   0|
+|petal_width  |   0|
+|species      |   0|
+|dtype: int64 |
 
 ### References
 [^1]: https://gist.github.com/curran/a08a1080b88344b0c8a7
