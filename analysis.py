@@ -150,23 +150,7 @@ plt.ylabel("Iris Measurements")
 plt.xticks(y)
 plt.savefig("Test.png")
 plt.close()
-#histogram, 4, 5, 6 species compare sepal_length, width, petal_length, width
 
-figure, ax = plt.subplots(2, 2, figsize=(8,8))
-#https://www.statology.org/matplotlib-histogram-color/ - EC
-ax[0,0].set_title("Sepal Length")
-ax[0,0].hist(df['sepal_length'], color="#86f7ee", ec="#1ca398", bins=8)
-
-ax[0,1].set_title("Sepal Width")
-ax[0,1].hist(df['sepal_width'], color="#a996f2", ec="#371ca3", bins=8);
-
-ax[1,0].set_title("Petal Length")
-ax[1,0].hist(df['petal_length'], color="#74a684", ec="#125928", bins=8);
-
-ax[1,1].set_title("Petal Width")
-ax[1,1].hist(df['petal_width'], color="#faee46", ec="#736d1e", bins=8,);
-
-plt.savefig("Histograms")
 
 #-----
 
