@@ -95,7 +95,7 @@ This results shows us the count of each column with also the mean value, standar
 |75%     | 6.400000   | 3.300000   | 5.100000       | 1.800000|
 |max      |7.900000   | 4.400000  |  6.900000       | 2.500000|
 
-Once this prints correctly we can continue and open and write a new file with these contents at the same time (see Fig: summary.txt). We call the variable "summarize" in order to read the file to get the information that will be written into the new file using write() method and to_string() [^9] [^10] [^11]
+Once this prints correctly we can continue and open and write a new file with these contents at the same time (see Fig: summary.txt). We call the variable "summarize" in order to read the file to get the information that will be written into the new file using write() method and to_string() [^9] [^10] [^11] [^12]
 
 ```python
 with open ("summary.txt", "w+") as file:
@@ -103,7 +103,7 @@ with open ("summary.txt", "w+") as file:
 file.close()
 ```
 
-![screenshot of summary.txt](summary.txt.png)[^12]
+![screenshot of summary.txt](summary.txt.png)
 
 ---
 
@@ -116,14 +116,14 @@ For this project we are to do the following:
 3. Outputs a scatter plot of each pair of variables.
 4. Performs any other analysis you think is appropriate.
 
-We have already output the summary for us to understand the values and their distributions etc and now we will create visual representations of the data to better understand the differences and comparisons of the 3 species of iris and their 4 attributes/values.
+We have already output the summary for us to understand the values and their distributions etc and now we will create visual representations of the data to better understand the differences and comparisons of the 3 species of iris and their 4 attributes/values. [^13] [^14]
 
 ---
 
 #### Histograms
 
 For the historgram section of this project it took me awhile to wrap my head around using the data I can grab from the dataframe and putting into a visual.
-In the end I found the best way to do it was to make a histogram of all 4 attributes to compare their distributions
+In the end I found the best way to do it was to make a histogram of all 4 attributes to compare their distributions [^15] [^16]
 
 ```python
 cols = ["sepal_length", "sepal_width", "petal_width", "petal_length"]
@@ -131,9 +131,9 @@ df.rename(columns = {cols[0]:0, cols[1]:1, cols[2]:2, cols[3]:3}, inplace=True)
 df.loc[::50]
 ```
 
-Renaming column labels using a dictionary to use later when needed for naming in the histogram, and loc() property which works like the head() method to return the specified amount of rows and columns from the dataset. Here we request all columns and every 50th row (the first row of each species) [^13] I thought it was best to stick with histograms to start as box plots did not make too much sense to me in regards to using them and felt not many would either.
+Renaming column labels using a dictionary to use later when needed for naming in the histogram, and loc() property which works like the head() method to return the specified amount of rows and columns from the dataset. Here we request all columns and every 50th row (the first row of each species) [^17] I thought it was best to stick with histograms to start as box plots did not make too much sense to me in regards to using them and felt not many would either.
 
-The following histograms show that the four attributes are either evenly distributed (bell shaped or not), sepal length and width are evenly distributed so have an even or normal distribution but petal length and width do not. [^14]
+The following histograms show that the four attributes are either evenly distributed (bell shaped or not), sepal length and width are evenly distributed so have an even or normal distribution but petal length and width do not. [^18]
 
 ```python
 fig, ax = plt.subplots(2, 2, figsize = (10, 8))
@@ -153,7 +153,7 @@ plt.savefig("Histograms")
 
 ![alt text](Histograms.png)
 
-[^14] [^15] [^16] [^17]
+[^19] [^20] [^21] 
 
 ---
 
@@ -170,9 +170,10 @@ plt.gcf().set_size_inches(10, 8)
 gcf() is to set the size of the image the scatter plot will fit into. Following this, the scatterplot is plotted with x, y, hue, data and palette. Data points back to the code reading the file and x, y, and hue call the information from there. Paletter customises the colors, the first points to "setosa", second to "versicolor" and third "virginica" and then legend() notes which color is which with a label and location of legend is set.
 
 ```python
-sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
-plt.legend(bbox_to_anchor=(1, 1), loc=2)
+g = sns.pairplot(df, hue="species", palette="hls", markers=["o", "s", "d"])
 ```
+
+[^22] [^23] [^24] [^25]
 
 The following code completes each scatter plot, it includes the code to save the information in an image and closes the file so the data doesnt end up on on graph altogether.
 
@@ -201,6 +202,19 @@ With these scatterplots we can see a few different things.
 ### Conclusion
 
 To end the project I found a way to show all the information in one large graphic. Depicting the distribution type along side the scatterplots related to each attribute comparison. 
+
+- 0 = sepal length
+- 1 = sepal width
+- 2 = petal width
+- 3 = petal length
+
+It shows sepal lengths have a pretty bell shaped in each iris type and are centered on the graph, so this attribute has an even distribution, as is sepal width.
+Setosa's attributes show to be most evenly distributed while virginica is only even in petal width. Petal lengths vary while a small amount of virginica sepal length and widths are abnormal the bigger the sizes of each attribute goes.
+
+![Attribute Distribution Comparison Charts](speciesoverview.png)
+
+[26^] [^27] [^28]
+
 ---
 
 ### References
@@ -209,23 +223,27 @@ To end the project I found a way to show all the information in one large graphi
 [^2]: https://www.w3schools.com/python/pandas/ref_df_head.asp#:~:text=Definition%20and%20Usage,a%20number%20is%20not%20specified.&text=Note%3A%20The%20column%20names%20will,addition%20to%20the%20specified%20rows.
 [^3]: https://www.digitalocean.com/community/tutorials/python-shape-method#
 [^4]: https://www.geeksforgeeks.org/working-with-missing-data-in-pandas/
-[^5]:https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
+[^5]: https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
 [^6]: https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
 [^7]: https://www.statology.org/pandas-describe-only-mean-std/
 [^8]: https://www.askpython.com/python/examples/calculate-summary-statistics#
 [^9]: https://www.freecodecamp.org/news/file-handling-in-python/
-https://www.pythontutorial.net/python-basics/python-write-text-file/
-[^10]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
-[^11]: https://www.youtube.com/watch?v=vmEHCJofslg&t=1068s
-[^12]: https://www.markdownguide.org/cheat-sheet/
+[^10]: https://www.pythontutorial.net/python-basics/python-write-text-file/
+[^11]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_string.html
+[^12]: https://www.youtube.com/watch?v=vmEHCJofslg&t=1068s
 [^13]: https://www.youtube.com/watch?v=02BFXhPQWHQ
-[^14]:https://www.statology.org/normality-test-python/
-https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
-https://matplotlib.org/stable/gallery/statistics/hist.html
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html
-https://www.statology.org/matplotlib-histogram-color/
-https://cmdlinetips.com/2019/04/how-to-specify-colors-to-scatter-plots-in-python/
-https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
-https://stackoverflow.com/questions/36018681/stop-seaborn-plotting-multiple-figures-on-top-of-one-another
-
-
+[^14]: https://www.youtube.com/watch?v=r75BPh1uk38
+[^15]: https://www.statology.org/normality-test-python/
+[^16]: https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
+[^17]: https://matplotlib.org/stable/gallery/statistics/hist.html
+[^18]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html
+[^19]: https://color.adobe.com/create/color-wheel
+[^20]: https://www.statology.org/matplotlib-histogram-color/
+[^21]: https://cmdlinetips.com/2019/04/how-to-specify-colors-to-scatter-plots-in-python/
+[^22]: https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
+[^23]: https://stackoverflow.com/questions/36018681/stop-seaborn-plotting-multiple-figures-on-top-of-one-another
+[^24]: https://seaborn.pydata.org/tutorial/color_palettes.html
+[^25]: https://cmdlinetips.com/2019/04/how-to-specify-colors-to-scatter-plots-in-python/
+[^26]: https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
+[^27]: https://seaborn.pydata.org/generated/seaborn.pairplot.html
+[^28]: https://www.markdownguide.org/cheat-sheet/

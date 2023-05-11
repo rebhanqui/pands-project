@@ -108,8 +108,6 @@ plt.savefig("Histograms.png")
 plt.close()
 
 #a comparison of the attributes in one graphic, includes scatterplots and distribution plots.
-plt.gcf().set_size_inches(14, 10)
-sns.pairplot(df, hue="species", palette="hls", markers=["o", "s", "d"])
-plt.legend(bbox_to_anchor=(1, 1), loc=2)
-plt.savefig("speciesoverview.png")
+g = sns.pairplot(df, hue="species", palette="hls", markers=["o", "s", "d"])
+plt.savefig("speciesoverview1.png")
 plt.close()
