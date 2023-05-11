@@ -16,6 +16,10 @@ The Iris Data Project is a well-known dataset in the machine learning community.
 
 For this project we are to creates various graphs from the data set downloaded so we can better understand the data within.
 
+---
+
+### Iris Varieties
+
 |Setosa|Versicolor|Virginica|
 |-------|------|------|
 |![Image of Iris Setosa Variety](iris_setosa.jpeg)|![Image of Iris Varsicolor Variety](iris_versicolor.jpeg)|![Image of Iris Virginica Variety](iris_virginica.jpeg)|
