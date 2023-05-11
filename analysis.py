@@ -139,15 +139,13 @@ plt.close()
 #------
 
 #Saves a histogram of each variable to png files
-x = 
+x = ["sepal_width"]
 y = ["setosa", "varsicolor", "virginica"]
-
 
 plt.hist(x, y, ec="red")
 
 plt.xlabel("Iris Species")
 plt.ylabel("Iris Measurements")
-
 
 plt.xticks(y)
 plt.savefig("Test.png")
@@ -166,7 +164,7 @@ ax[1,0].set_title("Petal Length")
 ax[1,0].hist(df['petal_length'], color="#74a684", ec="#125928", bins=8);
 
 ax[1,1].set_title("Petal Width")
-ax[1,1].hist(df['petal_width'], color="#faee46", ec="#736d1e", bins=8);
+ax[1,1].hist(df['petal_width'], color="#faee46", ec="#736d1e", bins=8,);
 
 plt.savefig("Histograms")
 
@@ -177,4 +175,5 @@ sns.pairplot(df, hue="species")
 plt.legend(bbox_to_anchor=(1, 1), loc=2)
 plt.savefig("Overview of Species Comparison")
 
+plt.clf() 
 del df
