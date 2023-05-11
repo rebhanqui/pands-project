@@ -21,7 +21,6 @@ print(df.shape)
 #Result is 150 rows and 5 columns (does not include the row numbers column)
 #(150, 5)
 
-print(df.species.value_counts())
 
 #using .info we can print the data types to avoid null data etc
 print(df.info())
@@ -38,6 +37,13 @@ print(df.info())
 #dtypes: float64(4), object(1)
 #memory usage: 6.0+ KB
 
+print(df.value_counts("species"))
+#Results:
+#species
+#setosa        50
+#versicolor    50
+#virginica     50
+#dtype: int64
 
 print(df.isnull().sum())
 #Results:
@@ -48,13 +54,7 @@ print(df.isnull().sum())
 #species         0
 #dtype: int64
 
-print(df.value_counts("species"))
-#Results:
-#species
-#setosa        50
-#versicolor    50
-#virginica     50
-#dtype: int64
+
 
 summarize = df.describe()
 #Result:
