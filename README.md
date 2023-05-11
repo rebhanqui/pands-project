@@ -20,7 +20,9 @@ To start we use some methods to read the data and make sense of what is there in
 ```python
 df = pd.read_csv("iris.csv")
 print(df.head())
+print(df.shape())
 ```
+Results of head() method[^2]:
 |   |sepal_length | sepal_width | petal_length | petal_width | species |
 |------|------------|-------------|------------|---------------|---------|
 |0     |      5.1     |     3.5     |      1.4      |    0.2  |setosa|
@@ -28,6 +30,19 @@ print(df.head())
 |2     |   4.7       |    3.2      |     1.3       |   0.2  |setosa|
 |3     |   4.6       |   3.1      |     1.5      |    0.2  |setosa|
 |4     |  5.0        |  3.6        |   1.4        |  0.2  |setosa|
+*this shows us the first 5 rows of data and their column titles which come in useful later to source data required*
+
+The results of the shape() method shows us that there are 5 columns and 150 rows of data in a simple result: (150, 5) (Rows, Columns)[^3]
+
+Value_counts() used with species index returns the count of each species in the date. In this case the result is even with 50 rows for each making up the 150 total.
+
+|setosa    |    50|
+|versicolor |   50|
+|virginica   |  50|
+|Name: species, dtype: int64|
+|<class 'pandas.core.frame.DataFrame'>|
 
 ### References
 [^1]: https://gist.github.com/curran/a08a1080b88344b0c8a7
+[^2]: https://www.w3schools.com/python/pandas/ref_df_head.asp#:~:text=Definition%20and%20Usage,a%20number%20is%20not%20specified.&text=Note%3A%20The%20column%20names%20will,addition%20to%20the%20specified%20rows.
+[^3]: https://www.digitalocean.com/community/tutorials/python-shape-method#
