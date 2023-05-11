@@ -149,6 +149,36 @@ plt.savefig("Histograms")
 
 ---
 
+#### Scatterplots
+
+Scatterplots allow us to see clearly the relation between length and width of each attribute while seeing where each species particular attribute lies. To do this Seaborn and Matplotlib were used together. Seaborn was used as I thought it was better to customize the scatterplots.
+
+##### Petal Length v Petal Width
+
+```python
+plt.gcf().set_size_inches(10, 8)
+```
+
+gcf() is to set the size of the image the scatter plot will fit into. Following this, the scatterplot is plotted with x, y, hue, data and palette. Data points back to the code reading the file and x, y, and hue call the information from there. Paletter customises the colors, the first points to "setosa", second to "versicolor" and third "virginica" and then legend() notes which color is which with a label and location of legend is set.
+
+```python
+sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=df, palette=["#A74DAD", "#71DDFF", "#396B2D"])
+plt.legend(bbox_to_anchor=(1, 1), loc=2)
+```
+
+The following code completes each scatter plot, it includes the code to save the information in an image and closes the file so the data doesnt end up on on graph altogether.
+
+```python
+plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
+plt.close()
+```
+
+|Histograms |           |
+|-----------|-----------|
+|![Petal Width Versus Petal Length Scatterplot](pwvplscatterplot.png)|![Sepal Width Versus Sepal Length Scatterplot](swvslscatterplot.png)|
+|![Sepal Length Versus Petal Length Scatterplot](slvplscatterplot.png)|![Sepal Width Versus Petal Width Scatterplot](swvpwcatterplot.png)|
+|![Sepal Length Versus Petal Width Scatterplot](slvpwscatterplot.png)|![Sepal Width Versus Petal Length Scatterplot](swvplscatterplot.png)|
+
 ---
 
 ### References
@@ -169,7 +199,11 @@ https://www.pythontutorial.net/python-basics/python-write-text-file/
 [^13]: https://www.youtube.com/watch?v=02BFXhPQWHQ
 [^14]:https://www.statology.org/normality-test-python/
 https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/
-[^15]: https://matplotlib.org/stable/gallery/statistics/hist.html
+https://matplotlib.org/stable/gallery/statistics/hist.html
 https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html
-[^16]: https://www.statology.org/matplotlib-histogram-color/
+https://www.statology.org/matplotlib-histogram-color/
+https://cmdlinetips.com/2019/04/how-to-specify-colors-to-scatter-plots-in-python/
+https://stackoverflow.com/questions/13073045/matplotlib-savefig-size-control
+https://stackoverflow.com/questions/36018681/stop-seaborn-plotting-multiple-figures-on-top-of-one-another
+
 
