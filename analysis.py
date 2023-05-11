@@ -1,7 +1,6 @@
 import numpy as np  
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 import seaborn as sns
 
 #reading in the CSV file - acquired from:
@@ -22,19 +21,7 @@ print(df.shape)
 #Result is 150 rows and 5 columns (does not include the row numbers column)
 #(150, 5)
 
-print(df.describe())
-#                0           1           3           2
-#count  150.000000  150.000000  150.000000  150.000000
-#mean     5.843333    3.054000    3.758667    1.198667
-#std      0.828066    0.433594    1.764420    0.763161
-#min      4.300000    2.000000    1.000000    0.100000
-#25%      5.100000    2.800000    1.600000    0.300000
-#50%      5.800000    3.000000    4.350000    1.300000
-#75%      6.400000    3.300000    5.100000    1.800000
-#max      7.900000    4.400000    6.900000    2.500000
 print(df.species.value_counts())
-
-
 
 #using .info we can print the data types to avoid null data etc
 print(df.info())
@@ -69,8 +56,21 @@ print(df.value_counts("species"))
 #virginica     50
 #dtype: int64
 
+summarize = df.describe()
+#Result:
+#                0           1           3           2
+#count  150.000000  150.000000  150.000000  150.000000
+#mean     5.843333    3.054000    3.758667    1.198667
+#std      0.828066    0.433594    1.764420    0.763161
+#min      4.300000    2.000000    1.000000    0.100000
+#25%      5.100000    2.800000    1.600000    0.300000
+#50%      5.800000    3.000000    4.350000    1.300000
+#75%      6.400000    3.300000    5.100000    1.800000
+#max      7.900000    4.400000    6.900000    2.500000
 #Outputs a summary of each variable to a single text file:
-
+with open ("summary.txt", "w+") as file:
+    file.write(summarize.to_string())
+file.close()
 
 #------
 #Outputs a scatter plot of each pair of variables:
@@ -143,6 +143,7 @@ df.rename(columns = {cols[0]:0, cols[1]:1, cols[2]:2, cols[3]:3}, inplace=True)
 df.loc[::50]
 
 #https://www.statology.org/matplotlib-histogram-color/ - EC
+#https://matplotlib.org/stable/gallery/statistics/hist.html
 #https://www.youtube.com/watch?v=02BFXhPQWHQ
 #histogram, 4, 5, 6 species compare sepal_length, width, petal_length, width
 
