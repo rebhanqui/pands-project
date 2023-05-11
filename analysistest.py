@@ -34,7 +34,7 @@ print(data.species.value_counts())
 #histogram, 4, 5, 6 species compare sepal_length, width, petal_length, width
 
 # this histogram shows that the four attributes are either evenly distributed (bell shaped not binary)or not, sepal length and width are evenly distrib petal is not
-fig, ax = plt.subplots(2, 2, figsize = (8, 4))
+fig, ax = plt.subplots(2, 2, figsize = (10, 8))
 #saves 4 figures for each attribute into one figure
 ax[0, 0].hist(data[0], label=cols[0])
 ax[0, 1].hist(data[1], alpha=1, label=cols[1])
@@ -42,6 +42,7 @@ ax[1, 0].hist(data[2], alpha=0.6, label=cols[2])
 ax[1, 1].hist(data[3], alpha=0.5, label=cols[3])
 #alpha 1 makes top most shape transparent fully, the rest lesser modes of transparancy
 plt.legend()
+#needs legends on each!!!###############
 plt.savefig("Histograms")
 plt.close()
 
