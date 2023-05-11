@@ -16,6 +16,10 @@ The Iris Data Project is a well-known dataset in the machine learning community.
 
 For this project we are to creates various graphs from the data set downloaded so we can better understand the data within.
 
+|Setosa|Versicolor|Virginica|
+|-------|------|------|
+|![Image of Iris Setosa Variety](iris_setosa.jpeg)|![Image of Iris Varsicolor Variety](iris_versicolor.jpeg)|![Image of Iris Virginica Variety](iris_virginica.jpeg)|
+
 ---
 
 ### Part 1: Reading In The Data
@@ -173,11 +177,22 @@ plt.savefig("Petal Width V Petal Length Scatterplot", dpi=200)
 plt.close()
 ```
 
+---
+
 |Histograms |           |
 |-----------|-----------|
 |![Petal Width Versus Petal Length Scatterplot](pwvplscatterplot.png)|![Sepal Width Versus Sepal Length Scatterplot](swvslscatterplot.png)|
 |![Sepal Length Versus Petal Length Scatterplot](slvplscatterplot.png)|![Sepal Width Versus Petal Width Scatterplot](swvpwcatterplot.png)|
 |![Sepal Length Versus Petal Width Scatterplot](slvpwscatterplot.png)|![Sepal Width Versus Petal Length Scatterplot](swvplscatterplot.png)|
+
+With these scatterplots we can see a few different things.
+
+1. Setosa are quite small in petal length and width in comparison to Versicolor which would be the second biggest in both attributes, leaving Virginica to have the biggest petals of the Iris varieties flowers.
+2. Setosa sepal widths are largest in comparison to their length and the other two varieties, which mix together in this comparison of sepal width versus sepal length. Sepal length and petal length on setosa are smallest by minimum of about 1cm.
+3. Petal Width and Sepal Width seem to correlate with each species and the longer the sepal length the longer the peals length as well.
+4. If the sepal is longer is its more than likely slimmer but both versicolor and virginica are quite scattered and mixed on this graph with two or three species samples being wider than usual.
+
+---
 
 ---
 

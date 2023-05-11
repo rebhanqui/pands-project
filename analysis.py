@@ -111,7 +111,7 @@ ax[1, 1].set_title("Petal Width")
 ax[1, 1].hist(df[3], alpha=0.5, label=cols[3], color="#41AB85", ec="#296B53")
 #alpha 1 makes top most shape transparent fully, the rest lesser modes of transparancy
 
-plt.savefig("Histograms")
+plt.savefig("Histograms.png")
 
 
 #-----
